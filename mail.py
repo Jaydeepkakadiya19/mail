@@ -37,12 +37,11 @@ def SendMail(Form, mto):
     ImgFileName = "certi.png"
     img_data = open(ImgFileName, 'rb').read()
     msg = MIMEMultipart()
-    msg['Subject'] = 'Synapse Participation Certificate'
-    msg['From'] = 'synapse.pr2019@gmail.com'
-    msg['To'] = 'jaykakadiya019@gmail.com'
+    msg['Subject'] = 'About ....'
+    msg['From'] = 'abc@gmail.com'
+    msg['To'] = mto
 
-    text = MIMEText(
-        "Dear " + name[i]+", \n\n      Find Certificate in Attachments ")
+    text = MIMEText("Dear " + name[i]+", \n\n      Find Certificate in Attachments ")
     msg.attach(text)
     image = MIMEImage(img_data, name=os.path.basename(ImgFileName))
     msg.attach(image)
@@ -55,8 +54,8 @@ mails = data['Mail'].iloc
 name = data['name'].iloc
 event = data['event'].iloc
 
-UserName = "synapse.pr2019@gmail.com"
-UserPassword = "Synpr2019"
+UserName = "abc@gmail.com"
+UserPassword = "xyz
 
 s = smtplib.SMTP('smtp.gmail.com', 587)
 s.ehlo()
