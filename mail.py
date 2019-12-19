@@ -55,7 +55,7 @@ name = data['name'].iloc
 event = data['event'].iloc
 
 UserName = "abc@gmail.com"
-UserPassword = "xyz
+UserPassword = "xyz"
 
 s = smtplib.SMTP('smtp.gmail.com', 587)
 s.ehlo()
