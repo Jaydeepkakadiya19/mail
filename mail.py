@@ -17,7 +17,7 @@ event = data['event']
 
 
 gmailaddress = "synapse.pr2019@gmail.com"
-gmailpassword = "Synpr2019"
+gmailpassword = "xxxxxx"
 mailto = mails[0]
 
 msg = MIMEMultipart()
