@@ -10,7 +10,7 @@ from email import encoders
 from PIL import Image, ImageDraw, ImageFont
 
 
-def make_certi(n, e):
+def make_certi(n, e):                              #This function take will add info about participant in certificate 
     image = Image.open('certificate.png')
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype('font.ttf', size=150)
@@ -33,7 +33,7 @@ def make_certi(n, e):
     # image.show()
 
 
-def SendMail(Form, mto):
+def SendMail(Form, mto):                               # this function will send mail with customize certificate as attachment
     ImgFileName = "certi.png"
     img_data = open(ImgFileName, 'rb').read()
     msg = MIMEMultipart()
@@ -49,12 +49,12 @@ def SendMail(Form, mto):
     s.sendmail(UserName, mto, msg.as_string())
 
 
-data = pd.read_excel("data.xlsx")
+data = pd.read_excel("data.xlsx")             #  taking name email id and name of event from excel sheet
 mails = data['Mail'].iloc
 name = data['name'].iloc
 event = data['event'].iloc
 
-UserName = "abc@gmail.com"
+UserName = "abc@gmail.com"                # Mail id and passward from which we have to send certificate
 UserPassword = "xyz"
 
 s = smtplib.SMTP('smtp.gmail.com', 587)
